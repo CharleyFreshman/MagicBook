@@ -1,0 +1,18 @@
+{
+  "name": "vocabulary-master",
+  "version": "1.0.0",
+  "description": "词汇学习网页应用，帮助用户记忆英语词组",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "xlsx": "^0.18.5",
+    "chart.js": "^4.4.8"
+  },
+  "devDependencies": {
+    "vite": "^5.3.4"
+  }
+}

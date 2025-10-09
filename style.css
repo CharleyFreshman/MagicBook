@@ -1,0 +1,548 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    color: #333;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23ff9fb2" fill-opacity="0.1" d="M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z"></path></svg>');
+}
+
+/* 容器样式 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* 标题样式 */
+.app-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #ff6b8b;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    font-weight: bold;
+}
+
+h2 {
+    color: #ff6b8b;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
+h3 {
+    color: #5a5a5a;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+/* 语言选择器 */
+.language-selector {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.language-selector label {
+    font-size: 1.1rem;
+    margin-right: 0.5rem;
+    color: #5a5a5a;
+}
+
+.language-selector select {
+    padding: 0.5rem 1rem;
+    border: 2px solid #ffb6c1;
+    border-radius: 25px;
+    background: white;
+    font-size: 1rem;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.language-selector select:hover {
+    border-color: #ff6b8b;
+    box-shadow: 0 0 10px rgba(255, 107, 139, 0.2);
+}
+
+/* 统计图表区域 */
+.stats-section {
+    margin-bottom: 3rem;
+}
+
+.charts-container {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.chart-wrapper {
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #ffebf0;
+}
+
+/* 测验设置区域 */
+.quiz-settings {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #ffebf0 0%, #ffffff 100%);
+    border-radius: 15px;
+    border: 2px dashed #ffb6c1;
+}
+
+.settings-options {
+    margin-bottom: 1.5rem;
+}
+
+.settings-options label {
+    font-size: 1.1rem;
+    margin-right: 0.5rem;
+    color: #5a5a5a;
+}
+
+.settings-options select {
+    padding: 0.5rem 1rem;
+    border: 2px solid #ffb6c1;
+    border-radius: 25px;
+    background: white;
+    font-size: 1rem;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.settings-options select:hover {
+    border-color: #ff6b8b;
+    box-shadow: 0 0 10px rgba(255, 107, 139, 0.2);
+}
+
+/* 按钮样式 */
+.btn-primary {
+    background: linear-gradient(135deg, #ff6b8b 0%, #ff8fa3 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(255, 107, 139, 0.3);
+}
+
+.btn-primary:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(255, 107, 139, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(-1px);
+}
+
+.btn-primary:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 3px 10px rgba(132, 250, 176, 0.3);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 14px rgba(132, 250, 176, 0.4);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.btn-success:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
+}
+
+.btn-success:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #f44336 0%, #ef5350 100%);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(244, 67, 54, 0.3);
+}
+
+.btn-danger:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(244, 67, 54, 0.4);
+}
+
+.btn-danger:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.btn-exit {
+    background: #ff9800;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-exit:hover {
+    background: #f57c00;
+    transform: translateY(-1px);
+}
+
+/* 联系区域 */
+.contact-section {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, #e3f2fd 0%, #ffffff 100%);
+    border-radius: 15px;
+    border: 2px dashed #bbdefb;
+}
+
+.contact-options {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* 测验界面样式 */
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.quiz-progress {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ff6b8b;
+    margin-bottom: 2rem;
+}
+
+.quiz-content {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.question-section,
+.answer-section {
+    flex: 1;
+    min-width: 300px;
+}
+
+.definition-box,
+.answer-box {
+    background: linear-gradient(135deg, #fff3f5 0%, #ffffff 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 2px solid #ffd6dc;
+    min-height: 200px;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.answer-box {
+    background: linear-gradient(135deg, #f0f8ff 0%, #ffffff 100%);
+    border-color: #bde0fe;
+    font-family: 'Courier New', monospace;
+}
+
+.quiz-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* 结果界面样式 */
+.result-score {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#score-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #ff6b8b;
+    margin-bottom: 1rem;
+}
+
+.result-image {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    border: 5px solid #ffd6dc;
+}
+
+.result-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+/* 错题本样式 */
+.wrong-words {
+    margin-top: 3rem;
+}
+
+#wrong-words-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+#wrong-words-table th,
+#wrong-words-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid #ffebf0;
+}
+
+#wrong-words-table th {
+    background: linear-gradient(135deg, #ff6b8b 0%, #ff8fa3 100%);
+    color: white;
+    font-weight: bold;
+}
+
+#wrong-words-table tr:nth-child(even) {
+    background: #fff3f5;
+}
+
+#wrong-words-table tr:hover {
+    background: #ffebf0;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .app-title {
+        font-size: 2rem;
+    }
+    
+    .charts-container {
+        flex-direction: column;
+    }
+    
+    .quiz-content {
+        flex-direction: column;
+    }
+    
+    .quiz-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .quiz-actions button {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .contact-options {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-options button {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .result-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .result-actions button {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* 加载动画 */
+.loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #ff6b8b;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* 文件上传提示样式 */
+.upload-hint {
+    animation: pulse 2s infinite;
+    transition: all 0.3s ease;
+}
+
+.upload-hint:hover {
+    background: rgba(255, 107, 139, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 107, 139, 0.4);
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 4px 12px rgba(255, 107, 139, 0.3);
+    }
+    50% {
+        box-shadow: 0 6px 16px rgba(255, 107, 139, 0.5);
+    }
+    100% {
+        box-shadow: 0 4px 12px rgba(255, 107, 139, 0.3);
+    }
+}
+
+/* 表格响应式样式优化 */
+@media (max-width: 768px) {
+    #wrong-words-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    
+    #wrong-words-table thead,
+    #wrong-words-table tbody,
+    #wrong-words-table tr,
+    #wrong-words-table th,
+    #wrong-words-table td {
+        display: block;
+        text-align: left;
+    }
+    
+    #wrong-words-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    #wrong-words-table tr {
+        border: 1px solid #ffd6dc;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    
+    #wrong-words-table td {
+        border: none;
+        border-bottom: 1px solid #ffebf0;
+        position: relative;
+        padding-left: 50%;
+        min-height: 40px;
+    }
+    
+    #wrong-words-table td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+        content: attr(data-label);
+        background: rgba(255, 107, 139, 0.1);
+        padding: 5px;
+        border-radius: 4px;
+    }
+}

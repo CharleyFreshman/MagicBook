@@ -404,88 +404,67 @@ function setupEventListeners() {
 function updateLanguage() {
     const t = translations[language];
     
+    // 首先使用翻译对象中的值更新所有元素
     document.querySelector('.app-title').textContent = t.appTitle;
-    
-    // 语言标签：在English版中只显示英文
-    if (language === 'en') {
-        document.querySelector('.language-selector label').textContent = 'Language:';
-    } else {
-        document.querySelector('.language-selector label').textContent = t.languageLabel;
-    }
-    
+    document.querySelector('.language-selector label').textContent = t.languageLabel;
     document.querySelector('.stats-section h2').textContent = t.statsTitle;
     document.querySelector('#visitsChart').closest('.chart-wrapper').querySelector('h3').textContent = t.visitsTitle;
     document.querySelector('#completedChart').closest('.chart-wrapper').querySelector('h3').textContent = t.completedTitle;
     document.querySelector('.quiz-settings h2').textContent = t.startQuizTitle;
-    
-    // 题目数量选择标签：在English版中只显示英文
-    if (language === 'en') {
-        document.querySelector('.settings-options label').textContent = 'Select Questions:';
-    } else {
-        document.querySelector('.settings-options label').textContent = t.questionCountLabel;
-    }
-    
-    startQuizBtn.textContent = t.startQuizBtn;
+    document.querySelector('.settings-options label').textContent = t.questionCountLabel;
     document.querySelector('.contact-section h2').textContent = t.contactTitle;
     
-    // 在English版中，所有按钮文本都使用英文
-    if (language === 'en') {
-        reportErrorBtn.textContent = 'Report Errors';
-        shareVocabBtn.textContent = 'Share Vocabulary';
-        suggestImprovementBtn.textContent = 'Suggest Improvements';
-        peekAnswerBtn.textContent = 'Peek Answer';
-        showAnswerBtn.textContent = 'Show Answer';
-        correctAnswerBtn.textContent = 'Correct';
-        wrongAnswerBtn.textContent = 'Wrong';
-        exitQuizBtn.textContent = 'Exit';
-        backToMainBtn.textContent = 'Back to Main';
-        restartQuizBtn.textContent = 'Restart Quiz';
-        
-        // 标题文本也使用英文
-        document.getElementById('quiz-title').textContent = 'Vocabulary Quiz';
-        document.getElementById('question-title').textContent = 'Chinese Definition';
-        document.getElementById('answer-title').textContent = 'English Answer';
-        document.getElementById('result-title').textContent = 'Quiz Results';
-        document.querySelector('.app-title').textContent = 'Vocabulary Learning App';
-        document.querySelector('.quiz-settings h2').textContent = 'Start Quiz';
-        document.querySelector('.contact-section h2').textContent = 'Contact Us';
-        document.querySelector('.stats-section h2').textContent = 'Statistics';
-        document.querySelector('#visitsChart').closest('.chart-wrapper').querySelector('h3').textContent = 'Visits';
-        document.querySelector('#completedChart').closest('.chart-wrapper').querySelector('h3').textContent = 'Completed Quizzes';
-        document.getElementById('wrong-words-title').textContent = 'Wrong Words';
-        
-        // 表格头部也使用英文
-        const tableHeaders = document.querySelectorAll('#wrong-words-table th');
-        tableHeaders[0].textContent = 'Chinese';
-        tableHeaders[1].textContent = 'English';
-    } else {
-        reportErrorBtn.textContent = t.reportErrorBtn;
-        shareVocabBtn.textContent = t.shareVocabBtn;
-        suggestImprovementBtn.textContent = t.suggestImprovementBtn;
-        peekAnswerBtn.textContent = t.peekAnswerBtn;
-        showAnswerBtn.textContent = t.showAnswerBtn;
-        correctAnswerBtn.textContent = t.correctAnswerBtn;
-        wrongAnswerBtn.textContent = t.wrongAnswerBtn;
-        exitQuizBtn.textContent = t.exitBtn;
-        backToMainBtn.textContent = t.backToMainBtn;
-        restartQuizBtn.textContent = t.restartQuizBtn;
-        
+    // 更新所有按钮文本
+    startQuizBtn.textContent = t.startQuizBtn;
+    reportErrorBtn.textContent = t.reportErrorBtn;
+    shareVocabBtn.textContent = t.shareVocabBtn;
+    suggestImprovementBtn.textContent = t.suggestImprovementBtn;
+    peekAnswerBtn.textContent = t.peekAnswerBtn;
+    showAnswerBtn.textContent = t.showAnswerBtn;
+    correctAnswerBtn.textContent = t.correctAnswerBtn;
+    wrongAnswerBtn.textContent = t.wrongAnswerBtn;
+    exitQuizBtn.textContent = t.exitBtn;
+    backToMainBtn.textContent = t.backToMainBtn;
+    restartQuizBtn.textContent = t.restartQuizBtn;
+    
+    // 更新其他标题文本
+    if (document.getElementById('quiz-title')) {
         document.getElementById('quiz-title').textContent = t.quizTitle;
+    }
+    if (document.getElementById('question-title')) {
         document.getElementById('question-title').textContent = t.questionTitle;
+    }
+    if (document.getElementById('answer-title')) {
         document.getElementById('answer-title').textContent = t.answerTitle;
+    }
+    if (document.getElementById('result-title')) {
         document.getElementById('result-title').textContent = t.resultTitle;
-        document.querySelector('.app-title').textContent = t.appTitle;
-        document.querySelector('.quiz-settings h2').textContent = t.startQuizTitle;
-        document.querySelector('.contact-section h2').textContent = t.contactTitle;
-        document.querySelector('.stats-section h2').textContent = t.statsTitle;
-        document.querySelector('#visitsChart').closest('.chart-wrapper').querySelector('h3').textContent = t.visitsTitle;
-        document.querySelector('#completedChart').closest('.chart-wrapper').querySelector('h3').textContent = t.completedTitle;
+    }
+    if (document.getElementById('wrong-words-title')) {
         document.getElementById('wrong-words-title').textContent = t.wrongWordsTitle;
-        
-        // 更新表格头部
-        const tableHeaders = document.querySelectorAll('#wrong-words-table th');
+    }
+    
+    // 更新表格头部
+    const tableHeaders = document.querySelectorAll('#wrong-words-table th');
+    if (tableHeaders.length >= 2) {
         tableHeaders[0].textContent = t.chineseHeader;
         tableHeaders[1].textContent = t.englishHeader;
+    }
+    
+    // 特别处理：在English版中，确保某些文本完全使用英文
+    if (language === 'en') {
+        document.querySelector('.language-selector label').textContent = 'Language:';
+        document.querySelector('.settings-options label').textContent = 'Select Questions:';
+        
+        // 确保进度文本也是英文
+        if (document.getElementById('question-number') && document.getElementById('total-questions')) {
+            const currentQuestion = currentQuestionIndex + 1;
+            const totalQuestions = currentQuizData.length;
+            if (totalQuestions > 0) {
+                document.getElementById('question-number').textContent = `Question ${currentQuestion}`;
+                document.getElementById('total-questions').textContent = `/${totalQuestions}`;
+            }
+        }
     }
 }
 
